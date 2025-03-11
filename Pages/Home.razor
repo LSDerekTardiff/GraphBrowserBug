@@ -1,0 +1,22 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+<button onclick="@( async () => await TestGraphClientAsync())">Test Graph Client</button>
+
+Welcome to your new app.
+
+@code {
+
+
+    private Task TestGraphClientAsync()
+    {
+        Console.WriteLine("Testing client");
+
+        var client = Microsoft.Graph.GraphClientFactory.Create();
+
+        return Task.CompletedTask;
+    }
+}
